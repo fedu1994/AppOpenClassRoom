@@ -1,0 +1,25 @@
+<div class="container" style="border: 0.3px solid #a2a8a8;" [ngStyle]=" {'background-color' : postFinal.loveIts > 0? '#E2EFDB' : postFinal.loveIts < 0? '#FFD1BB' : 'white'}">
+    <div class="row">
+        <div class="col-md-6" [ngClass]=" postFinal.loveIts > 0 ? 'greenDiv' : postFinal.loveIts < 0? 'redDiv' : 'normalDiv'">
+            <h4>{{postFinal.title}}</h4>
+        </div>
+        <div class="col-md-6" style="text-align:end;">
+            {{postFinal.created_at | date : 'short'}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" [ngClass]=" postFinal.loveIts > 0 ? 'greenDiv' : postFinal.loveIts < 0? 'redDiv' : 'normalDiv'"> 
+            {{postFinal.content}}
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 30px ; padding-bottom: 30px;">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-success" (click)="addLoveIt()">Love it</button>
+            <button type="button" class="btn btn-danger" (click)="removeLoveIt()" style="margin-left: 10px;">Dont Love it</button>
+        </div>
+    </div>
+
+
+</div>
